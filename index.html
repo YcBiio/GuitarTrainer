@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guitar Trainer</h1>
+        <button id="showChordsBtn">Afficher les accords</button>
+        <div id="chordsContainer" class="hidden"></div>
+
+        <button id="startExerciseBtn">Lancer l'exercice</button>
+        <div id="exerciseContainer" class="hidden">
+            <p id="currentChord">Préparez-vous...</p>
+            <label for="bpmRange">BPM :</label>
+            <input type="range" id="bpmRange" min="40" max="160" value="80">
+            <span id="bpmValue">80</span>
+            <audio id="metronomeSound" src="metronome.mp3"></audio>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="bigChordContainer">
+        <div class="big-chord-wrapper">
+            <button id="closeBigChord">X</button>
+            <img id="bigChordImage" src="" alt="Accord">
+        </div>
+        </div>
+</body>
+</html>

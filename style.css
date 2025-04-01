@@ -1,0 +1,174 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #4d2c18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+/* Conteneur principal (carte) */
+.container {
+    width: 800px; /* Augmentation de la taille */
+    padding: 40px;
+    background: rgba(255, 248, 220, 0.95); /* Couleur crème semi-transparente */
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Titres */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #6f4e37;
+    margin-bottom: 20px;
+}
+
+/* Boutons */
+/* Style général des boutons */
+button {
+    display: block;
+    width: 85%;
+    margin: 15px auto; /* Marge actuelle */
+    padding: 14px 30px;
+    border: none;
+    background: #8b5a2b;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+/* Pour augmenter l'espacement entre les boutons */
+#startExerciseBtn {
+    margin-top: -10px; /* Augmenter cette valeur pour plus d'espace */
+}
+
+button:hover {
+    background: #6f4e37;
+}
+
+/* Conteneur des accords */
+#chordsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Images des accords - Animation zoom */
+#chordsContainer img {
+    width: 220px;
+    height: auto;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+#chordsContainer img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Style du BPM */
+#bpmRange {
+    width: 75%;
+    margin: 10px;
+}
+
+#bpmValue {
+    font-size: 26px;
+    font-weight: bold;
+    color: #4d2c18;
+}
+
+/* Exercice */
+#exerciseContainer {
+    margin-top: 20px;
+    padding: 25px;
+    background: rgba(255, 239, 207, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Texte de l'accord affiché */
+#currentChord {
+    font-size: 38px;
+    font-weight: bold;
+    color: #8b5a2b;
+    margin: 20px 0;
+}
+
+/* Conteneur de l'accord en grand */
+#bigChordContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 10;
+}
+
+/* Affichage de l'image en grand */
+#bigChordContainer.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.big-chord-wrapper {
+    position: relative;
+    max-width: 700px;
+    width: 85%;
+}
+
+#bigChordImage {
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 248, 220, 0.95);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Rendre la croix plus visible et bien placée */
+#closeBigChord {
+    position: absolute;
+    top: -30px;
+    right: -100px; /* Diminuer cette valeur pour déplacer plus à droite */
+    background: #6f4e37;
+    color: white;
+    padding: 10px 16px; /* Augmentation du padding pour agrandir le bouton */
+    border: none;
+    font-size: 20px; /* Augmentation de la taille de la police */
+    cursor: pointer;
+    border-radius: 8px; /* Ajustement du rayon de bordure pour un bouton plus grand */
+    font-weight: bold;
+    width: auto;
+    z-index: 20;
+}
+
+#closeBigChord:hover {
+    background: #8b5a2b;
+}
+
+
+
+/* Masquer les éléments au départ */
+.hidden {
+    display: none;
+}
